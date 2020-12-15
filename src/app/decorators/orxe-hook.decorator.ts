@@ -3,7 +3,8 @@ export function OrxeHook(configuration?) {
     if (!window["registeredHooks"]) {
       window["registeredHooks"] = {};
     }
-    const key = `${configuration.component}_${configuration.method}`;
+    const key = `${configuration.selector}_${configuration.method}`;
+    console.log(`Registering: ${key}`);
     window["registeredHooks"][key] = {
       configuration,
       before: target.prototype["before"],

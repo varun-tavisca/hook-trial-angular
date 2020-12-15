@@ -8,6 +8,7 @@ import { Hookable } from "../decorators/hookable.decorator";
   styleUrls: ["./my-search.component.scss"],
 })
 @Hookable({
+  selector: "app-my-search",
   hooks: ["ngOnInit", "getResults"],
 })
 export class MySearchComponent implements OnInit {
