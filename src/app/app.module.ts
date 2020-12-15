@@ -1,16 +1,15 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
-
-import { AppComponent } from './app.component';
+import { AppComponent } from "./app.component";
+import { BrowserModule } from "@angular/platform-browser";
+import { MySearchComponent } from "./my-search/my-search.component";
+import { NgModule } from "@angular/core";
+import { registerHooks } from "./client";
 
 @NgModule({
-  declarations: [
-    AppComponent
-  ],
-  imports: [
-    BrowserModule
-  ],
+  declarations: [AppComponent, MySearchComponent],
+  imports: [BrowserModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
+
+registerHooks();
