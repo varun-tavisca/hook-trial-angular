@@ -1,12 +1,11 @@
-import { Hook } from "../decorators/hook.interface";
-import { OrxeHook } from "../decorators/orxe-hook.decorator";
+import { Hooks, OrxeHook } from "@orxe-sdk/hooks";
 
 @OrxeHook({
   selector: "app-my-search",
   method: "getResults",
-  executeOriginal: true,
+  executeOriginal: false,
 })
-export class OverrideResults implements Hook {
+export class OverrideResults implements Hooks {
   before() {
     console.log("before results override");
     return new Promise<any>((resolve, reject) => {

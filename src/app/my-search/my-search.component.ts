@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 
-import { Hookable } from "../decorators/hookable.decorator";
+import { Hookable } from "@orxe-sdk/hooks";
 
 @Component({
   selector: "app-my-search",
@@ -17,7 +17,7 @@ export class MySearchComponent implements OnInit {
 
   ngOnInit() {
     console.log("Initing....");
-    this.results = this.getResults();
+    // this.results = this.getResults();
   }
 
   getResults() {
