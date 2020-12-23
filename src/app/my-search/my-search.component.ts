@@ -9,18 +9,25 @@ import { Hookable } from "../decorators/hookable.decorator";
 })
 @Hookable({
   selector: "app-my-search",
-  hooks: ["ngOnInit", "getResults"],
+  hooks: [ "getResults"],
 })
 export class MySearchComponent implements OnInit {
   results: any[];
-  constructor() {}
+  constructor() {
+    // this.results = this.getResultData();
+  }
 
   ngOnInit() {
     console.log("Initing....");
-    this.results = this.getResults();
+    this.results = this.getResultData();
+    console.log(this.results);
   }
 
   getResults() {
+    this.results = this.getResultData();
+  }
+  
+  getResultData() {
     console.log("Results...");
     return [
       {
@@ -40,5 +47,17 @@ export class MySearchComponent implements OnInit {
         name: "D",
       },
     ];
+  }
+
+  private forTest() {
+    console.log('test----->>>>>>>');
+    console.log(this.results);
+  }
+
+  private forTesting() {
+    console.log('forTesting');
+    this.forTest();
+    const test = this.results[0]
+    return test;
   }
 }

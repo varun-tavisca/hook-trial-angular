@@ -1,5 +1,5 @@
 export interface Hook {
-  before(): any;
+  before(instance): any;
   override(): any;
-  after(): any;
+  after(instance): any;
 }
