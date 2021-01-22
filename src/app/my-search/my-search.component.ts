@@ -1,6 +1,7 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnChanges, OnInit } from "@angular/core";
 
 import { Hookable } from "../decorators/hookable.decorator";
+// import { Hookable } from "@orxe-sdk/hooks";
 
 @Component({
   selector: "app-my-search",
@@ -9,30 +10,36 @@ import { Hookable } from "../decorators/hookable.decorator";
 })
 @Hookable({
   selector: "app-my-search",
-  hooks: [ "getResults"],
+  hooks: [ "getResultData"],
 })
-export class MySearchComponent implements OnInit {
+export class MySearchComponent implements OnInit, OnChanges {
   results: any[];
   constructor() {
-    // this.results = this.getResultData();
+    this.results = this.getResultData('qwe');
   }
 
   ngOnInit() {
     console.log("Initing....");
-    this.results = this.getResultData();
+    this.results = this.getResultData('112');
     console.log(this.results);
   }
 
+  ngOnChanges(chnages) {
+    console.log('on chnage', chnages);
+  }
+
   getResults() {
-    this.results = this.getResultData();
+    console.log("Results...");
+    this.results = this.getResultData('hwehj');
   }
   
-  getResultData() {
-    console.log("Results...");
+  getResultData(rw) {
+    console.log(rw);
+    
     return [
       {
         id: 1,
-        name: "A",
+        name: rw,
       },
       {
         id: 2,
