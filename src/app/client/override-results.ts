@@ -26,6 +26,24 @@ export class OverrideResults implements Hook {
 
   after(instance): void {
     console.log("after results override");
+    instance.results = [
+      {
+        id: 1,
+        name: 23,
+      },
+      {
+        id: 2,
+        name: "B",
+      },
+      {
+        id: 3,
+        name: "C",
+      },
+      {
+        id: 4,
+        name: "D",
+      },
+    ];;
     console.log(instance.forTest());
     // throw new Error("Method not implemented.");
   }

@@ -64,7 +64,7 @@ export class MySearchComponent implements OnInit, OnChanges {
   private forTesting() {
     console.log('forTesting');
     this.forTest();
-    const test = this.results[0]
-    return test;
+    // const test = this.results[0]
+    // return test;
   }
 }
