@@ -10,7 +10,7 @@ import { Hookable } from "../decorators/hookable.decorator";
 })
 @Hookable({
   selector: "app-my-search",
-  hooks: [ "getResultData"],
+  hooks: ["getResults"],
 })
 export class MySearchComponent implements OnInit, OnChanges {
   results: any[];

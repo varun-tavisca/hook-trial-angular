@@ -3,7 +3,7 @@ import { OrxeHook } from "../decorators/orxe-hook.decorator";
 
 @OrxeHook({
   selector: "app-my-search",
-  method: "getResultData",
+  method: "getResults",
   executeOriginal: true,
 })
 export class OverrideResults implements Hook {

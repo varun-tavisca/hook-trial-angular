@@ -21,7 +21,7 @@ export function OrxeHook(configuration?) {
         };
     
         console.log(`registering: ${key}`);
-        sdkInstance[_hookKey] = newHook;
+        sdkInstance[_hookKey] = {...sdkInstance[_hookKey], ...newHook};
         // windowManager.set(_hookKey, Object.assign(sdkInstance[_hookKey], newHook));
       };
 };
