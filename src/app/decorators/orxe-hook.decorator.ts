@@ -1,4 +1,3 @@
-
 import { windowManager } from '@orxe-sdk/window-manager';
 
 const _hookKey = 'registeredHooks';

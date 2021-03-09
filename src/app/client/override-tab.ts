@@ -1,12 +1,11 @@
-import { Hook } from "../decorators/hook.interface";
-import { OrxeHook } from "../decorators/orxe-hook.decorator";
+import { Hooks, OrxeHook  } from '@orxe-sdk/hooks';
 
 @OrxeHook({
   selector: "app-root",
-  method: "forTest",
-  executeOriginal: false,
+  method: "ngOnInit",
+  executeOriginal: true,
 })
-export class OverrideTabs implements Hook {
+export class OverrideTabs implements Hooks {
   before(instance) {
     console.log("before test override");
     
@@ -17,12 +16,7 @@ export class OverrideTabs implements Hook {
     });
   }
 
-  override() {
-    return [{ a: 1 }];
-  }
-
   after(instance): void {
     console.log("after results override");
-    // throw new Error("Method not implemented.");
   }
 }

@@ -9,7 +9,7 @@ import { Hookable } from './decorators/hookable.decorator';
 
 @Hookable({
   selector: "app-root",
-  hooks: ["forTest"],
+  hooks: ["forTest", "ngOnInit"],
 })
 
 export class AppComponent implements OnInit {
